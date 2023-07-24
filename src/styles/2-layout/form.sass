@@ -1,0 +1,40 @@
+@use '../_variables' as vars
+    
+.form
+    padding: 8em 14em 6em
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        font-size: 2.8em
+        margin: 0
+
+    p
+        color: #525252a6
+        
+    form
+        display: flex
+        flex-direction: column
+        width: 50%
+        align-items: center
+        gap: 2em
+
+        label
+            width: 100%
+
+            span
+                font-weight: bold
+
+            input
+                display: block
+                width: 100%
+                border-top: none
+                border-left: none
+                border-right: none
+                border-bottom: 1px solid #0000003b
+                padding: 1em 1em 1em 0
+
+                &:focus-visible
+                    outline: none
+                    border-bottom: 2px solid vars.$secundary-color

@@ -1,0 +1,110 @@
+1 - Instalação do react, typeScript e outras dependências OK
+
+    + Vamos instalar o react junto com o typeScript usando o Vite: npm create vite@latest
+
+    + Mudamos para a pasta do projeto e depois colocamos mais dois comandos:
+
+        npm install
+        npm run dev
+
+    + Vamos instalar também o react icons: npm install react-icons
+
+    + Instalar o SASS: npm install sass
+
+
+2 - Excluir os arquivos desnecessários OK
+
+    + Exclua os arquivos de css, já que você irá usar o sass
+
+3 - Prepare a os arquivos de SASS (ESTRUTURA DE PASTAS) OK
+
+4 - Prepare a pasta de dados (DATA) OK
+
+5 - Prepare a estrutura de layout(pastas e componentes) OK
+
+6 - Crie o navbar e o footer
+
+    + navbar OK
+
+    + Crie o footer OK
+
+7 - Crie o header OK
+
+8 - Crie a sessão de marcas OK
+
+9 - Passar marca como parametro na URL quando clicada OK
+
+    EX: /category/:mark
+
+10 - Pegar as informações passadas através da URL e formatar a página de acordo com tais informações
+
+    - Formate a navbar de acordo com a URL OK
+
+    - Crie uma barra de pesquisa que filtre os carros pesquisados de acordo com o título, preço e ano OK
+
+    - Exiba os carros pesquisados
+
+        + Crie um componente para o carro que irá ser exibido OK
+
+    - Adicione a funcionalidade na barra de pesquisa para buscar os carros pelo preço e pelo ano OK
+
+    - Desenvolva o layout de exibição de carros em formato de listas OK
+
+
+11 - Desenvolva a página do carro  OK
+
+    - Ajuste o navbar OK
+
+    - Pegue o id do carro pela URL e apresente as informações sobre o carro
+
+        + Para pegar o id utilize o useParams
+
+            import { useParams } from "react-router-dom"
+            const {id} = useParams()
+
+    - Funcionalidades: download, print, bookmark e share
+
+        + download: Foi utilizada a biblioteca html2pdf.js, para converter o html em pdf
+
+        
+12 - Desenvolva a página de criar conta e login OK
+
+
+
+
+
+13 - Finalize o firebase com a autenticação do usuário e as opções de compra do carro, que so devem
+estar disponíveis após o usuário criar uma conta ou logar no site
+
+    1- Entre no firebase com sua conta g-mail
+    2- Vá em console e crie um novo projeto
+    3- Depois vá no ícone web para registrar o seu projeto
+
+        + Após registrar, o firebase vai te dar algumas instruções para você importar para o seu projeto,
+        no entanto, agora elas não serão necessárias, clique em continuar no console
+
+        + Para pegar essas informações posteriormente você pode clicar no app que foi criado e após isso na engrenagem
+
+
+    4 - Vá agora em autenticação, irá ter alguns provedores, escolha o de E-mail/senha e salve
+
+    5 - Agora vamos instalar no nosso projeto um pacote do firebase, que vai servir para criar uma
+    conexão com a api do nosso app que foi gerada pelo google
+
+        + Use o comando: npm i firebase
+
+        + O gerenciamento da autenticação será feita via context
+
+
+    6 - Integração do firebase ao projeto
+
+        + Vá nas configurações do projeto, engrenagem, e copie as instruções que o firebase te da
+        para importar no seu projeto
+
+        + Você vai colar essas instruções em um arquivo chamado config.js que ficará em uma pasta 
+        chamada firebase que você irá
+
+        + Após isso você vai também importar a função getFirestore para poder usar o banco de dados
+
+
+    !!! AULA 130 Mini-blog 4:00

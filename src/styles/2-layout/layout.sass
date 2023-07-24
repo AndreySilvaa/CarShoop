@@ -1,0 +1,648 @@
+@use '../_variables' as vars
+@use '../_dinamicStyles'
+
+.navbar
+    background-color: rgba(0, 0, 0, 0)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.5em
+    position: absolute
+    width: 100%
+
+    .logo
+        a
+            display: flex
+            align-items: center
+            gap: .5em
+            font-size: 1.6em
+            color: white
+
+            img
+                width: 3em
+
+    ul
+        display: flex
+
+        li
+            a
+                color: white
+                font-size: 1.2em
+                margin-right: 2rem
+                display: flex
+                gap: 5px
+                transition-duration: .5s
+
+
+                &:hover
+                    color: #C72145 !important
+
+
+header
+    height: 60vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: linear-gradient(to bottom, rgb(7 7 7), #00000000), vars.$header-image
+    background-position: initial
+    background-repeat: no-repeat
+    background-size: cover
+
+    h1, h5
+        margin: 8px
+        color: white
+
+    div
+        margin-top: 2em
+
+        span
+            color: black
+            background: white
+            padding: 8px 14px
+            border-radius: 5px
+
+
+.main
+
+    padding: 4em 14em
+
+    .marks
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &_logo
+            width: 100%
+            display: flex
+            gap: 2em
+
+            a
+                flex: 1 1 20%
+                cursor: pointer
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                height: 250px
+                box-shadow: 0px 0px 2px 1px rgba(28, 28, 28, 0.0588235294)
+                text-decoration: none
+                color: black
+                border-radius: 1em
+
+                &:hover
+                        box-shadow: 0px 0px 5px 1px rgb(28 28 28 / 47%)
+
+                img
+                    width: 100px
+
+
+.mark_section
+    background-color: #EAF1F9
+    padding: 12em 14em 6em
+
+    .search_cars
+        background: white
+        padding: 0em 0em 0em 2em
+        display: flex
+        justify-content: space-between
+        width: 60%
+        align-items: center
+
+        &_results
+            display: flex
+            align-items: center
+            font-size: 1em
+            font-weight: 500
+            color: #6d6d6d
+
+            .numCars
+                margin-left: 6px
+                padding: 5px
+                background-color: #4a4a4a
+                color: #EAF1F9
+                border-radius: 50%
+                width: 30px
+                height: 30px
+                text-align: center
+
+        &_filters
+            display: flex
+            gap: 20px
+            align-items: center
+
+            select
+                    width: 200px
+                    height: 50px
+                    cursor: pointer
+                    padding: 15px
+                    font-size: 16px
+                    background-color: #cccccc45
+                    color: #7d7d7d
+                    border: 1px solid #0000002b
+                    outline: none
+
+        &_organize
+            display: flex
+            align-items: center
+
+            div
+                border: 1px solid #00000024
+                width: 70px
+                height: 70px
+                background: #cccccc3d
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+
+                svg
+                    font-size: 1.2em
+                    color: #727272
+
+            .lists:hover > svg, .blocks:hover > svg
+                color: #42C4A8
+                pointer-events: none
+
+    .grade
+        background-color: #EAF1F9
+        display: flex
+        gap: 50px
+        flex-wrap: wrap
+        margin-top: 3em
+        justify-content: flex-start
+
+        .car_component
+            background-color: white
+            flex: 0 0 300px
+            box-shadow: 0px 0px 6px 2px #00000017
+
+            &_image
+                a
+                    img
+                        width: 300px
+                        height: 170px
+
+            &_info
+                padding-top: 1em
+
+                &_about
+                    padding: 0em 1em 0 1em
+                    a
+                        color: black
+                        font-weight: 600
+                        font-size: 0.8em
+                        height: 40px
+                        display: block
+
+                    p
+                        color: #45CA62
+                        font-weight: 600
+                        font-size: 1.2em
+
+                &_details
+                    display: flex
+                    justify-content: space-between
+
+                    > div
+                        display: flex
+                        align-items: flex-end
+                        gap: 0.3em
+                        border: 1px solid #0000003b
+                        padding: 1em
+                        flex: 1
+                        justify-content: center
+                        border-bottom-color: transparent
+                        border-left-color: transparent
+                        
+
+                    > div:last-of-type
+                        border-right-color: transparent
+    .list
+        display: flex
+        flex-direction: column
+        gap: 3em
+        margin-top: 3em
+
+        .car_component
+            display: flex
+            height: 250px
+            background: white
+
+            &_image
+
+                a
+                    display: inline-block
+                    width: 420px
+                    height: 250px
+
+                    img
+                        width: 100%
+                        height: 100%
+
+            &_info
+                padding: 1.5em
+
+                &_about
+                    a
+                        color: black
+                        font-weight: 600
+
+                    .description
+                        font-size: 1em
+                        line-height: 25px
+                        color: #616161
+
+                    .price
+                        color: #45CA62
+                        font-weight: 600
+                        font-size: 1.2em
+
+                &_details
+                    display: flex
+                    gap: 2em
+                    margin: 1.5em 0
+                    border-top: 1px solid #00000029
+                    padding-top: 1em
+
+                    div
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        gap: 6px
+
+
+.CarPage
+    background-color: #EAF1F9
+    padding: 12em 11em 6em
+
+    .Share_modalwindow
+        position: fixed
+        background-color: #282A2D
+        right: 50%
+        top: 50%
+        transform: translate(50%, -50%)
+        border-radius: 10px
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+
+        .close
+            margin: 10px 10px 0 0
+            font-size: 2em
+            cursor: pointer
+            color: red
+            display: flex
+
+        ul
+            display: flex
+            padding: 0.5em 4em
+
+            li
+                padding: 1em
+                cursor: pointer
+                background-color: gray
+                border-radius: 50%
+                margin: 0 0.5em
+                transition-duration: .5s
+
+                a
+                    font-size: 1.5em
+                    display: flex
+                    color: white
+
+                &:hover
+                    background-color: vars.$secundary-color
+
+    &_info
+
+        &_intro
+            padding: 2em 1em
+            background: white
+            width: 850px
+
+            h2
+                font-size: 1.4em
+
+            &_buttons
+                display: flex
+                gap: 2em
+
+                div
+                    display: flex
+                    align-items: center
+                    gap: 5px
+                    cursor: pointer
+                    border: 1px solid rgb(0 0 0 / 21%)
+                    padding: .5em .5em
+                    color: #000000c7
+                    transition: .5s
+
+                    &:hover
+                        border-color: vars.$secundary-color
+                        color: vars.$secundary-color
+
+            &_details
+                margin-top: 3em
+                background-color: white
+                padding: 2em
+                width: 850px
+
+                .features
+                    display: grid
+                    grid-template-columns: 50% 50%
+                    gap: 1.5em
+                    font-size: 14px
+
+                    div
+                        border-bottom: 1px solid #00000026
+                        padding-bottom: 10px
+                        display: flex
+                        justify-content: space-between
+
+                        span:last-child
+                            color: #404040
+
+                        span:first-child
+                            font-weight: 500
+
+                .description
+                    display: flex
+                    flex-direction: column
+                    margin-top: 2em
+                    gap: 10px
+
+                    span:last-child
+                        color: #404040
+                        font-size: 14px
+                        line-height: 23px
+
+                    span:first-child
+                        font-weight: 500
+                            
+    &_CarImage_Contact
+        display: flex
+        gap: 2em
+
+        img
+            width: 850px
+
+        a
+            border-radius: 10px
+            width: 270px
+            color: white
+            display: flex
+            align-items: center
+
+            span:first-child
+                width: 20%
+                height: 100%
+                border-right: 2px solid #EAF1F9
+                display: flex
+                justify-content: center
+                align-items: center
+
+                svg
+                    scale: 1.6
+
+            span:last-child
+                width: 80%
+                text-align: center
+                padding: 1em 0
+
+        .contacts
+            display: flex
+            flex-direction: column
+            justify-content: center
+            gap: 2em
+
+            .author_phone
+                background-color: #EF5D50
+
+                &:hover
+                    background-color: #D75448
+
+            .whatsapp_number
+                background-color: #199473
+
+                &:hover
+                    background-color: #168567
+
+            .author_email
+                background-color: #428BCA
+
+                &:hover
+                    background-color: #3B7DB5
+
+    .marks
+        text-align: center
+        margin-top: 6em
+
+        .marks_logo
+            display: flex
+            align-items: center
+            text-align: center
+            justify-content: space-between
+
+            a
+                color: black
+                background-color: white
+                height: 180px
+                width: 180px
+                padding: 2em
+                display: flex
+                flex-direction: column
+                justify-content: center
+                border-radius: 1em
+
+                &:hover
+                    box-shadow: 0px 0px 5px 3px #00000011
+
+                img
+                    width: 75%
+                    margin: auto
+
+
+.about
+    padding: 8em 14em 6em
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &_content
+
+        display: flex
+        gap: 5em
+        margin-top: 3em
+
+        ol
+            width: 50%
+            padding: 0
+
+            li
+                margin-bottom: 3em
+                line-height: 26px
+                font-size: 1.2em
+
+        &_img
+            width: 100%
+            flex: 40%
+
+            img
+                width: 100%
+                height: 340px
+                border-radius: 5em
+                box-shadow: 0px 0px 8px 1px #0000007a
+                animation: growth 2s
+
+.footer
+    border: 1px solid
+
+    .main_footer
+        background-color: #121212
+        display: flex
+        align-items: center
+        height: 100%
+        color: white
+        padding: 5em 14em
+        gap: 3em
+
+        h2
+            font-size: 1.3em
+
+        p, li
+            color: #999999
+            font-size: 1em
+            line-height: 1.6em
+            margin-top: 1em
+
+            a
+                color: #999999
+                margin-top: 2em
+
+                &:hover
+                    color: white
+                    text-decoration: underline
+
+        &_about, &_newsletter
+            height: 75%
+            flex: 0 1 30%
+
+            .logo
+
+                margin-top: 19px
+
+                a
+                    display: flex
+                    align-items: center
+                    gap: .5em
+                    font-size: 1.6em
+                    color: white
+
+                    img
+                        width: 3em
+
+            form 
+                display: flex
+                flex-direction: column
+                gap: 1em
+
+                input[type="email"]
+                    height: 3em
+                    text-align: center
+                    font-size: 1.2em
+
+                button
+                    height: 3em
+                    text-align: center
+                    font-size: 1.2em
+                    cursor: pointer
+                    background-color: vars.$secundary-color
+                    color: white
+                    border: none
+                    border-radius: 4px
+
+                    &:hover
+                        background-color: vars.$primary-color
+
+        &_explore, &_category
+            height: 75%
+            flex: 0 1 20%
+
+
+    .copyright_section
+        display: flex
+        justify-content: space-between
+        height: 10vh
+        background-color: vars.$primary-color
+        color: white
+        padding: 0px 14em
+
+        div
+            color: #999999
+            display: flex
+            align-items: center
+            justify-content: end
+
+            p
+                font-size: 1em
+
+            ul
+                display: flex
+
+                a
+                    padding: 15px
+                    background-color: #606060
+                    border-radius: 50%
+                    display: flex
+                    color: white
+                    margin-left: 0.5em
+                    font-size: 1em
+                    transition-duration: .5s
+
+                    &:hover
+                        background-color: vars.$secundary-color
+
+                    svg
+                        font: 1em
+
+
+// Animação de surgimento de imagem 
+@keyframes growth
+    0%
+        transform: translateZ(-500px) scale(0.1)
+        opacity: 0.1
+        
+    100%
+        transform: translateZ(0) scale(1)
+        opacity: 1
+  
+
+.BookMark
+    color: red
+    scale: 1.2
+    animation-name: bookmark
+    animation-duration: .2s
+    animation-iteration-count: 3
+
+// Animação de tremer coração
+@keyframes bookmark
+    0%
+        transform: rotate(0deg)
+    
+    25%
+        transform: rotate(45deg)
+
+    50%
+        transform: rotate(0deg)
+    
+    75%
+        transform: rotate(-45deg)
+
+    100%
+        transform: rotate(0deg)
+
+
+
+
+   
