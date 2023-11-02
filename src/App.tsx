@@ -1,5 +1,5 @@
 // Routes
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth' // Funcionalidade que retorna se o usuário está autenticado ou não
 
 // Hooks
@@ -23,7 +23,7 @@ function App() {
   
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -34,7 +34,7 @@ function App() {
         </Routes>
 
         <Footer/>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
