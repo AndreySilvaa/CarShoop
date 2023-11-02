@@ -23,6 +23,7 @@
 
     ul
         display: flex
+        align-items: center
 
         li
             a
@@ -36,6 +37,39 @@
 
                 &:hover
                     color: #C72145 !important
+
+
+    .user_account
+        display: flex
+        align-items: center
+        gap: 15px
+
+        p
+            color: white
+
+        img
+            border-radius: 50%
+
+        .bt_logout
+            display: flex
+            gap: 5px
+            justify-content: center
+            align-items: center
+            width: 100px
+            padding: 10px 0px
+            border-radius: 5px
+            border: none
+            box-shadow: inset 0px 0px 3px 2px black
+
+
+        .bt_logout:hover
+            cursor: pointer
+            background: linear-gradient(to right, #C72145, #ffffff 20%, #ffffff 50%, #b71414 140%)
+            animation: slideColour 10s linear infinite
+            
+            svg
+                color: red
+
 
 
 header
@@ -387,12 +421,13 @@ header
         img
             width: 850px
 
-        a
+        a, div.author_phone, div.whatsapp_number, div.author_email
             border-radius: 10px
             width: 270px
             color: white
             display: flex
             align-items: center
+            cursor: pointer
 
             span:first-child
                 width: 20%
@@ -494,6 +529,29 @@ header
                 border-radius: 5em
                 box-shadow: 0px 0px 8px 1px #0000007a
                 animation: growth 2s
+
+
+.login
+    padding: 8em 14em 6em
+    display: flex
+    flex-direction: row
+    align-items: center
+    height: 60vh
+    justify-content: center
+
+    .googleBtn
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 10px
+        padding: 10px 25px
+        border-radius: 10px
+        box-shadow: 0px 1px 4px 1px #0000005e
+        cursor: pointer
+
+        img
+            width: 30px
+            height: 30px
 
 .footer
     border: 1px solid
@@ -606,6 +664,13 @@ header
                     svg
                         font: 1em
 
+
+// Animação do botão logout
+
+@keyframes slideColour 
+    to
+        background-position: 50vw
+        
 
 // Animação de surgimento de imagem 
 @keyframes growth

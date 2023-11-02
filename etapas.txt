@@ -107,4 +107,16 @@ estar disponíveis após o usuário criar uma conta ou logar no site
         + Após isso você vai também importar a função getFirestore para poder usar o banco de dados
 
 
-    !!! AULA 130 Mini-blog 4:00
+    Assistir o curso de react do pedroTech - Aula 15 - 27:50
+
+    7 - autenticação
+
+        + Foi utilizada a biblioteca react-firebase-hooks para atualizar as informações do usuário caso ele mude de conta
+
+            npm install react-firebase-hooks
+
+        + Estilize o navbar com o usuário autenticado
+
+        + Estilizar o botão de sign in with google
+
+    8 - Melhorar o estilo do botão de sair 

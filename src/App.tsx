@@ -1,5 +1,9 @@
 // Routes
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth' // Funcionalidade que retorna se o usuário está autenticado ou não
+
+// Hooks
+import { useState, useEffect } from 'react'
 
 // CSS
 import './styles/app.sass'
@@ -12,7 +16,6 @@ import Footer from './components/Footer'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
 import Login from './pages/login/Login'
-import Register from './pages/register/Register'
 import Brand from './pages/brand/Brand'
 import Car from './pages/car/Car'
 
@@ -26,7 +29,6 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
           <Route path='/brand/:brand' element={<Brand/>}/>
           <Route path='/car/:id' element={<Car/>}/>
         </Routes>

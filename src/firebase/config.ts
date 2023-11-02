@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from 'firebase/firebase' // Importe essa funcionalidade para usar o db
+import {getAuth, GoogleAuthProvider} from "firebase/auth"
+//import {getFirestore} from 'firebase/firestore' // Importe essa funcionalidade para usar o db
 
 const firebaseConfig = {
   apiKey: "AIzaSyDjeaJnhsVcM7ElDWbH39VAOR_uOWyuy84",
@@ -12,6 +13,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app)  // Banco de dados que iramos colocar todos os dados dos usuários
-
-export {db}
+export const auth = getAuth(app)
+export const provider = new GoogleAuthProvider()

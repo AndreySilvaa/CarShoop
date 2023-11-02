@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Firebase
+import { auth } from "../../firebase/config";
+
 // Routes
 import { useParams } from "react-router-dom";
 
@@ -35,9 +38,12 @@ import html2pdf from "html2pdf.js"; // Foi necessário usar // @ts-ignore pois n
 
 const Car = () => {
   const [car, setCar] = useState<Cars[] | null>(null);
-  const [andyNumber, setAndyNumber] = useState<string>("XXXX");
+  const [andyNumber, setAndyNumber] = useState<string>("(75) 98844-8451");
+  
   const { id } = useParams();
   const [modal, setModal] = useState<boolean>(false);
+
+  
 
   useEffect(() => {
     let carsArr = cars;
@@ -76,6 +82,8 @@ const Car = () => {
     console.log(e.currentTarget.children[0]);
 
     e.currentTarget.children[0].classList.toggle("BookMark");
+
+    console.log(auth.currentUser?.displayName)
   };
 
   // ModalShare
@@ -145,9 +153,9 @@ const Car = () => {
           <div className="CarPage_CarImage_Contact">
             <img src={car[0].image} alt="car" />
             <div className="contacts">
-              <a href="tel:75988448451" className="author_phone">
+              <a href="tel:75988448451" target="_blank" className="author_phone">
                 <span>{<AiFillPhone />}</span>{" "}
-                <span>(75) 9{andyNumber}-8451</span>
+                <span>{andyNumber}</span>
               </a>
               <a
                 target="_blank"
@@ -155,7 +163,7 @@ const Car = () => {
                 className="whatsapp_number"
               >
                 <span>{<AiOutlineWhatsApp />}</span>{" "}
-                <span>(75) 9{andyNumber}-8451</span>
+                <span>{andyNumber}</span>
               </a>
               <a href="mailto:andreysl2001@gmail.com" className="author_email">
                 <span>{<AiOutlineMail />}</span> <span>Enviar E-mail</span>

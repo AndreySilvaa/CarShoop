@@ -1,5 +1,6 @@
 // Icons
 import { BsFillPersonFill } from "react-icons/bs";
+import {AiOutlineLogout} from "react-icons/ai"
 
 // logo
 import logo from "../assets/logo.png";
@@ -7,11 +8,22 @@ import logo from "../assets/logo.png";
 // Routes
 import { Link, NavLink, useLocation } from "react-router-dom";
 
+// Firebase
+import { auth } from "../firebase/config";
+import { useAuthState } from "react-firebase-hooks/auth"; // Serve para monitorar o estado de autenticação do usuário
+import { signOut } from "firebase/auth";
+
 const Navbar = () => {
   let URL = useLocation();
   let { pathname } = URL;
   const words = ["brand", "car", "login", "about", "register"];
   let formatNavbar = words.some((word) => pathname.includes(word));
+
+  const [user] = useAuthState(auth); // Caso você logue com outro conta o usuário será automáticamente atualizado
+
+  const signUserOut = async () => {
+    await signOut(auth);
+  };
 
   return (
     <nav className="navbar" style={formatNavbar ? { background: "white" } : {}}>
@@ -34,20 +46,26 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li>
-          <NavLink
-            to="/register"
-            className={formatNavbar ? "formatedLink" : ""}
-          >
-            <BsFillPersonFill /> Criar conta
-          </NavLink>
-        </li>
+        {user && (
+          <div className="user_account">
+            <img
+              src={user?.photoURL || ""}
+              alt="foto do perfil"
+              width="40"
+              height="40"
+            />
+            <p className={formatNavbar ? "formatedLink" : ""}>{user?.displayName}</p>
+            <button className="bt_logout" onClick={signUserOut}>Sair {<AiOutlineLogout/>}</button>
+          </div>
+        )}
 
-        <li>
-          <NavLink to="/login" className={formatNavbar ? "formatedLink" : ""}>
-            Entrar
-          </NavLink>
-        </li>
+        {!user && (
+          <li>
+            <NavLink to="/login" className={formatNavbar ? "formatedLink" : ""}>
+              Entrar
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );
