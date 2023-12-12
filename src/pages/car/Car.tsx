@@ -38,12 +38,8 @@ import html2pdf from "html2pdf.js"; // Foi necessário usar // @ts-ignore pois n
 
 const Car = () => {
   const [car, setCar] = useState<Cars[] | null>(null);
-  const [andyNumber, setAndyNumber] = useState<string>("(75) 98844-8451");
-  
   const { id } = useParams();
   const [modal, setModal] = useState<boolean>(false);
-
-  
 
   useEffect(() => {
     let carsArr = cars;
@@ -155,7 +151,7 @@ const Car = () => {
             <div className="contacts">
               <a href="tel:75988448451" target="_blank" className="author_phone">
                 <span>{<AiFillPhone />}</span>{" "}
-                <span>{andyNumber}</span>
+                
               </a>
               <a
                 target="_blank"
@@ -163,7 +159,7 @@ const Car = () => {
                 className="whatsapp_number"
               >
                 <span>{<AiOutlineWhatsApp />}</span>{" "}
-                <span>{andyNumber}</span>
+                
               </a>
               <a href="mailto:andreysl2001@gmail.com" className="author_email">
                 <span>{<AiOutlineMail />}</span> <span>Enviar E-mail</span>

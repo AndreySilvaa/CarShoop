@@ -120,3 +120,7 @@ estar disponíveis após o usuário criar uma conta ou logar no site
         + Estilizar o botão de sign in with google
 
     8 - Melhorar o estilo do botão de sair 
+
+9 - Adicionar responsividade
+
+    + Crie o menu de navegação responsivo (AJUSTE OS ÍCONES)

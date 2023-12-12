@@ -1,9 +1,5 @@
 // Routes
 import {HashRouter, Routes, Route} from 'react-router-dom'
-import { onAuthStateChanged } from 'firebase/auth' // Funcionalidade que retorna se o usuário está autenticado ou não
-
-// Hooks
-import { useState, useEffect } from 'react'
 
 // CSS
 import './styles/app.sass'

@@ -1,6 +1,7 @@
 // Icons
-import { BsFillPersonFill } from "react-icons/bs";
 import {AiOutlineLogout} from "react-icons/ai"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaWindowClose } from "react-icons/fa";
 
 // logo
 import logo from "../assets/logo.png";
@@ -33,7 +34,10 @@ const Navbar = () => {
         </Link>
       </div>
 
+      <GiHamburgerMenu />
+
       <ul>
+      <FaWindowClose />
         <li>
           <NavLink to="/" className={formatNavbar ? "formatedLink" : ""}>
             Página inicial
@@ -48,13 +52,15 @@ const Navbar = () => {
 
         {user && (
           <div className="user_account">
-            <img
-              src={user?.photoURL || ""}
-              alt="foto do perfil"
-              width="40"
-              height="40"
-            />
-            <p className={formatNavbar ? "formatedLink" : ""}>{user?.displayName}</p>
+            <div>
+              <img
+                src={user?.photoURL || ""}
+                alt="foto do perfil"
+                width="40"
+                height="40"
+              />
+              <p className={formatNavbar ? "formatedLink" : ""}>{user?.displayName}</p>
+            </div>
             <button className="bt_logout" onClick={signUserOut}>Sair {<AiOutlineLogout/>}</button>
           </div>
         )}

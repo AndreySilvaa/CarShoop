@@ -1,5 +1,5 @@
-@use '../_variables' as vars
 @use '../_dinamicStyles'
+@import '../1-base/_base-mixins'
 
 .navbar
     background-color: rgba(0, 0, 0, 0)
@@ -9,6 +9,10 @@
     padding: 1.5em
     position: absolute
     width: 100%
+
+    @include mobile
+        align-items: flex-start
+    
 
     .logo
         a
@@ -25,6 +29,16 @@
         display: flex
         align-items: center
 
+        @include mobile
+            flex-direction: column
+            background-color: #000000
+            gap: 1.8em
+            padding: 1em
+            position: absolute
+            right: 0%
+            margin: 0
+            align-items: center
+
         li
             a
                 color: white
@@ -34,21 +48,36 @@
                 gap: 5px
                 transition-duration: .5s
 
-
                 &:hover
                     color: #C72145 !important
 
+                @include mobile
+                    margin: auto
 
     .user_account
         display: flex
         align-items: center
         gap: 15px
 
-        p
-            color: white
+        @include mobile
+            flex-direction: column
+            text-align: center
 
-        img
-            border-radius: 50%
+        div
+            display: flex
+            gap: 1em
+            align-items: center
+
+            @include mobile
+                flex-direction: column
+                text-align: center
+                gap: 0
+
+            p
+                color: white
+
+            img
+                border-radius: 50%
 
         .bt_logout
             display: flex
@@ -59,18 +88,11 @@
             padding: 10px 0px
             border-radius: 5px
             border: none
-            box-shadow: inset 0px 0px 3px 2px black
-
-
-        .bt_logout:hover
+            box-shadow: inset 0px 0px 3px 2px #0000008a
             cursor: pointer
-            background: linear-gradient(to right, #C72145, #ffffff 20%, #ffffff 50%, #b71414 140%)
-            animation: slideColour 10s linear infinite
             
-            svg
+            &:hover
                 color: red
-
-
 
 header
     height: 60vh
@@ -78,7 +100,7 @@ header
     flex-direction: column
     align-items: center
     justify-content: center
-    background: linear-gradient(to bottom, rgb(7 7 7), #00000000), vars.$header-image
+    background: linear-gradient(to bottom, rgb(7 7 7), #00000000)
     background-position: initial
     background-repeat: no-repeat
     background-size: cover
@@ -95,7 +117,6 @@ header
             background: white
             padding: 8px 14px
             border-radius: 5px
-
 
 .main
 
@@ -125,11 +146,10 @@ header
                 border-radius: 1em
 
                 &:hover
-                        box-shadow: 0px 0px 5px 1px rgb(28 28 28 / 47%)
+                    box-shadow: 0px 0px 5px 1px rgb(28 28 28 / 47%)
 
                 img
                     width: 100px
-
 
 .mark_section
     background-color: #EAF1F9
@@ -166,15 +186,15 @@ header
             align-items: center
 
             select
-                    width: 200px
-                    height: 50px
-                    cursor: pointer
-                    padding: 15px
-                    font-size: 16px
-                    background-color: #cccccc45
-                    color: #7d7d7d
-                    border: 1px solid #0000002b
-                    outline: none
+                width: 200px
+                height: 50px
+                cursor: pointer
+                padding: 15px
+                font-size: 16px
+                background-color: #cccccc45
+                color: #7d7d7d
+                border: 1px solid #0000002b
+                outline: none
 
         &_organize
             display: flex
@@ -248,7 +268,6 @@ header
                         justify-content: center
                         border-bottom-color: transparent
                         border-left-color: transparent
-                        
 
                     > div:last-of-type
                         border-right-color: transparent
@@ -305,7 +324,6 @@ header
                         align-items: center
                         gap: 6px
 
-
 .CarPage
     background-color: #EAF1F9
     padding: 12em 11em 6em
@@ -346,7 +364,7 @@ header
                     color: white
 
                 &:hover
-                    background-color: vars.$secundary-color
+                    background-color: #C72145
 
     &_info
 
@@ -373,8 +391,8 @@ header
                     transition: .5s
 
                     &:hover
-                        border-color: vars.$secundary-color
-                        color: vars.$secundary-color
+                        border-color: #C72145
+                        color: #C72145
 
             &_details
                 margin-top: 3em
@@ -413,7 +431,7 @@ header
 
                     span:first-child
                         font-weight: 500
-                            
+
     &_CarImage_Contact
         display: flex
         gap: 2em
@@ -497,7 +515,6 @@ header
                     width: 75%
                     margin: auto
 
-
 .about
     padding: 8em 14em 6em
     display: flex
@@ -529,7 +546,6 @@ header
                 border-radius: 5em
                 box-shadow: 0px 0px 8px 1px #0000007a
                 animation: growth 2s
-
 
 .login
     padding: 8em 14em 6em
@@ -600,7 +616,7 @@ header
                     img
                         width: 3em
 
-            form 
+            form
                 display: flex
                 flex-direction: column
                 gap: 1em
@@ -615,24 +631,23 @@ header
                     text-align: center
                     font-size: 1.2em
                     cursor: pointer
-                    background-color: vars.$secundary-color
+                    background-color: #C72145
                     color: white
                     border: none
                     border-radius: 4px
 
                     &:hover
-                        background-color: vars.$primary-color
+                        background-color: #282a2d
 
         &_explore, &_category
             height: 75%
             flex: 0 1 20%
 
-
     .copyright_section
         display: flex
         justify-content: space-between
         height: 10vh
-        background-color: vars.$primary-color
+        background-color: #282a2d
         color: white
         padding: 0px 14em
 
@@ -659,29 +674,26 @@ header
                     transition-duration: .5s
 
                     &:hover
-                        background-color: vars.$secundary-color
+                        background-color: #C72145
 
                     svg
                         font: 1em
 
-
 // Animação do botão logout
 
-@keyframes slideColour 
+@keyframes slideColour
     to
         background-position: 50vw
-        
 
 // Animação de surgimento de imagem 
 @keyframes growth
     0%
         transform: translateZ(-500px) scale(0.1)
         opacity: 0.1
-        
+
     100%
         transform: translateZ(0) scale(1)
         opacity: 1
-  
 
 .BookMark
     color: red
@@ -694,20 +706,15 @@ header
 @keyframes bookmark
     0%
         transform: rotate(0deg)
-    
+
     25%
         transform: rotate(45deg)
 
     50%
         transform: rotate(0deg)
-    
+
     75%
         transform: rotate(-45deg)
 
     100%
         transform: rotate(0deg)
-
-
-
-
-   
