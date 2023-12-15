@@ -124,3 +124,5 @@ estar disponíveis após o usuário criar uma conta ou logar no site
 9 - Adicionar responsividade
 
     + Crie o menu de navegação responsivo (AJUSTE OS ÍCONES)
+
+    + Finalize a estilização do menu

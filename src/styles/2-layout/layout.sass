@@ -25,6 +25,22 @@
             img
                 width: 3em
 
+    svg
+        color: white
+        cursor: pointer
+        transform: scale(1.8)
+        display: none
+
+        @include mobile
+            display: inline
+            margin-top: 6px
+
+    .fadeInMenu
+        @include mobile
+            position: absolute
+            left: auto
+            right: 0
+
     ul
         display: flex
         align-items: center
@@ -35,7 +51,7 @@
             gap: 1.8em
             padding: 1em
             position: absolute
-            right: 0%
+            left: 100%
             margin: 0
             align-items: center
 
