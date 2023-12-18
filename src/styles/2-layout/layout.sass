@@ -1,5 +1,8 @@
 @use '../_dinamicStyles'
 @import '../1-base/_base-mixins'
+@import '../1-base/_variables'
+
+//$background-image: "../assets/header.jpg"
 
 .navbar
     background-color: rgba(0, 0, 0, 0)
@@ -12,7 +15,6 @@
 
     @include mobile
         align-items: flex-start
-    
 
     .logo
         a
@@ -40,6 +42,7 @@
             position: absolute
             left: auto
             right: 0
+            top: 0
 
     ul
         display: flex
@@ -106,7 +109,7 @@
             border: none
             box-shadow: inset 0px 0px 3px 2px #0000008a
             cursor: pointer
-            
+
             &:hover
                 color: red
 
@@ -116,10 +119,21 @@ header
     flex-direction: column
     align-items: center
     justify-content: center
-    background: linear-gradient(to bottom, rgb(7 7 7), #00000000)
+    background: linear-gradient(to bottom, rgb(7 7 7), #00000000), $header-image
     background-position: initial
     background-repeat: no-repeat
     background-size: cover
+
+    h1
+        @include mobile
+            font-size: 2em
+            padding: 0 1em
+            text-align: center
+
+    h5
+        @include mobile
+            padding: 0 1em
+            text-align: center
 
     h1, h5
         margin: 8px
