@@ -14,61 +14,61 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="main_footer">
-        <div className="main_footer_about">
-          <div className="logo">
-            <Link to="/">
-              <img src={logo} alt="logo" /> EliteMotors
-            </Link>
+        <section>
+          <div className="main_footer_about">
+            <div className="logo">
+              <Link to="/">
+                <img src={logo} alt="logo" /> EliteMotors
+              </Link>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem quod quibusdam autem repellendus iste voluptatibus
+              obcaecati, quidem ex ullam fugit amet quae! Itaque dolore
+              molestiae vero praesentium aliquam dicta dignissimos.
+            </p>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            quod quibusdam autem repellendus iste voluptatibus obcaecati, quidem
-            ex ullam fugit amet quae! Itaque dolore molestiae vero praesentium
-            aliquam dicta dignissimos.
-          </p>
-        </div>
-
-        <div className="main_footer_explore">
-          <h2>Explore</h2>
-          <ul>
-            <li>
-              <a href="#">Sobre</a>
-            </li>
-            <li>
-              <a href="#">Apresentações</a>
-            </li>
-            <li>
-              <a href="#">Categorias</a>
-            </li>
-            <li>
-              <a href="#">Plano de Preços</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="main_footer_category">
-          <h2>Categorias</h2>
-          <ul>
-            <li>
-              <a href="#">Sobre</a>
-            </li>
-            <li>
-              <a href="#">Apresentações</a>
-            </li>
-            <li>
-              <a href="#">Categorias</a>
-            </li>
-            <li>
-              <a href="#">Plano de Preços</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
-            </li>
-          </ul>
-        </div>
+          <div className="main_footer_explore">
+            <h2>Explore</h2>
+            <ul>
+              <li>
+                <a href="#">Sobre</a>
+              </li>
+              <li>
+                <a href="#">Apresentações</a>
+              </li>
+              <li>
+                <a href="#">Categorias</a>
+              </li>
+              <li>
+                <a href="#">Plano de Preços</a>
+              </li>
+              <li>
+                <a href="#">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <div className="main_footer_category">
+            <h2>Categorias</h2>
+            <ul>
+              <li>
+                <a href="#">Sobre</a>
+              </li>
+              <li>
+                <a href="#">Apresentações</a>
+              </li>
+              <li>
+                <a href="#">Categorias</a>
+              </li>
+              <li>
+                <a href="#">Plano de Preços</a>
+              </li>
+              <li>
+                <a href="#">Contato</a>
+              </li>
+            </ul>
+          </div>
+        </section>
 
         <div className="main_footer_newsletter">
           <h2>Boletim de Notícias</h2>

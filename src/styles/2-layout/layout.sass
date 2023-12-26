@@ -39,6 +39,7 @@
 
     .fadeInMenu
         @include mobile
+            display: flex
             position: absolute
             left: auto
             right: 0
@@ -57,6 +58,7 @@
             left: 100%
             margin: 0
             align-items: center
+            display: none
 
         li
             a
@@ -150,7 +152,10 @@ header
 
 .main
 
-    padding: 4em 14em
+    padding: 4em 6em
+
+    @include mobile
+        padding: 4em 2em
 
     .marks
         display: flex
@@ -162,6 +167,10 @@ header
             display: flex
             gap: 2em
 
+            @include mobile
+                flex-direction: column
+                align-items: center
+
             a
                 flex: 1 1 20%
                 cursor: pointer
@@ -170,13 +179,17 @@ header
                 align-items: center
                 justify-content: center
                 height: 250px
-                box-shadow: 0px 0px 2px 1px rgba(28, 28, 28, 0.0588235294)
+                box-shadow: inset 0px -2px 4px 0px rgb(28 28 28 / 76%)
                 text-decoration: none
                 color: black
                 border-radius: 1em
 
+                @include mobile
+                    flex: auto
+                    width: 80%
+
                 &:hover
-                    box-shadow: 0px 0px 5px 1px rgb(28 28 28 / 47%)
+                    box-shadow: 0px 0px 5px 1px rgb(28 28 28 / 8%)
 
                 img
                     width: 100px
@@ -608,8 +621,24 @@ header
         align-items: center
         height: 100%
         color: white
-        padding: 5em 14em
+        padding: 5em 8em
         gap: 3em
+
+        @include mobile2
+            flex-direction: column
+
+        @include mobile
+            padding: 5em 0em
+
+        section
+            flex: 1 0 30%
+            gap: 5em
+            display: flex
+
+            @include mobile
+                justify-content: center
+                gap: 2em
+                font-size: 12px
 
         h2
             font-size: 1.3em
@@ -679,7 +708,10 @@ header
         height: 10vh
         background-color: #282a2d
         color: white
-        padding: 0px 14em
+        padding: 0px 8em
+
+        @include mobile
+            padding: 0px 1em
 
         div
             color: #999999
