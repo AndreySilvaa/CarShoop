@@ -126,3 +126,5 @@ estar disponíveis após o usuário criar uma conta ou logar no site
     + Crie o menu de navegação responsivo (AJUSTE OS ÍCONES)
 
     + Finalize a estilização do menu
+
+10 - Finalizar a estilização responsiva do filtro de carros por barras

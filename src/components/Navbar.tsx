@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 // Icons
-import {AiOutlineLogout} from "react-icons/ai"
+import { AiOutlineLogout } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaWindowClose } from "react-icons/fa";
 
@@ -21,7 +21,7 @@ const Navbar = () => {
   let { pathname } = URL;
   const words = ["brand", "car", "login", "about", "register"];
   let formatNavbar = words.some((word) => pathname.includes(word));
-  const nav = useRef<HTMLUListElement>(null)
+  const nav = useRef<HTMLUListElement>(null);
 
   const [user] = useAuthState(auth); // Caso você logue com outro conta o usuário será automáticamente atualizado
 
@@ -31,12 +31,12 @@ const Navbar = () => {
 
   // RESPONSIVE MENU
   const openMenu = () => {
-    nav.current?.classList.add("fadeInMenu")
-  }
+    nav.current?.classList.add("fadeInMenu");
+  };
 
   const closeMenu = () => {
-    nav.current?.classList.remove("fadeInMenu")
-  }
+    nav.current?.classList.remove("fadeInMenu");
+  };
 
   return (
     <nav className="navbar" style={formatNavbar ? { background: "white" } : {}}>
@@ -46,7 +46,10 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <span className="menuIcon" onClick={() => openMenu()}>
+      <span
+        className={formatNavbar ? "formatedMenu" : ""}
+        onClick={() => openMenu()}
+      >
         <GiHamburgerMenu />
       </span>
 
@@ -76,9 +79,13 @@ const Navbar = () => {
                 width="40"
                 height="40"
               />
-              <p className={formatNavbar ? "formatedLink" : ""}>{user?.displayName}</p>
+              <p className={formatNavbar ? "formatedLink" : ""}>
+                {user?.displayName}
+              </p>
             </div>
-            <button className="bt_logout" onClick={signUserOut}>Sair {<AiOutlineLogout/>}</button>
+            <button className="bt_logout" onClick={signUserOut}>
+              Sair {<AiOutlineLogout />}
+            </button>
           </div>
         )}
 

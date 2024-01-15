@@ -27,6 +27,12 @@
             img
                 width: 3em
 
+    span
+        display: none
+
+        @include mobile2
+            display: inline-block
+
     svg
         color: white
         cursor: pointer
@@ -198,13 +204,22 @@ header
     background-color: #EAF1F9
     padding: 12em 14em 6em
 
+    @include mobile2
+        padding: 12em 4em 6em
+
     .search_cars
         background: white
         padding: 0em 0em 0em 2em
         display: flex
         justify-content: space-between
-        width: 60%
+        width: 100%
+        min-width: 311px
         align-items: center
+        padding: 5px
+
+        @include mobile
+            flex-direction: column-reverse
+            gap: 1em
 
         &_results
             display: flex
@@ -212,6 +227,9 @@ header
             font-size: 1em
             font-weight: 500
             color: #6d6d6d
+
+            @include mobile
+                font-size: 10px
 
             .numCars
                 margin-left: 6px
@@ -222,6 +240,10 @@ header
                 width: 30px
                 height: 30px
                 text-align: center
+
+                @include mobile
+                    width: 20px
+                    height: 20px
 
         &_filters
             display: flex
@@ -239,6 +261,10 @@ header
                 border: 1px solid #0000002b
                 outline: none
 
+                @include mobile 
+                    width: 160px
+                    padding: 0
+
         &_organize
             display: flex
             align-items: center
@@ -252,6 +278,10 @@ header
                 align-items: center
                 justify-content: center
                 cursor: pointer
+
+                @include mobile
+                    width: 50px
+                    height: 50px
 
                 svg
                     font-size: 1.2em
@@ -564,15 +594,26 @@ header
     flex-direction: column
     align-items: center
 
-    &_content
+    @include mobile2
+        padding: 8em 4em 6em
 
+    @include mobile
+        padding: 8em 2em 6em
+
+    &_content
         display: flex
         gap: 5em
         margin-top: 3em
 
+        @include mobile
+            flex-direction: column-reverse
+
         ol
             width: 50%
             padding: 0
+
+            @include mobile
+                margin: auto
 
             li
                 margin-bottom: 3em
@@ -582,6 +623,10 @@ header
         &_img
             width: 100%
             flex: 40%
+
+            @include mobile
+                max-width: 500px
+                margin: auto
 
             img
                 width: 100%

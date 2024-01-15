@@ -1,3 +1,16 @@
+@import '../styles/1-base/_base-mixins'
+
 .formatedLink
-    color: black !important
+    color: #C72145 !important
     font-weight: 600 !important
+
+.formatedMenu
+    opacity: 0
+    background-color: black
+    width: 40px
+    height: 30px
+    border-radius: 15px
+    text-align: center
+
+    @include mobile
+        opacity: 1
