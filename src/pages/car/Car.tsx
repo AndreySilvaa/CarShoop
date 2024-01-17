@@ -79,7 +79,7 @@ const Car = () => {
 
     e.currentTarget.children[0].classList.toggle("BookMark");
 
-    console.log(auth.currentUser?.displayName)
+    console.log(auth.currentUser?.displayName);
   };
 
   // ModalShare
@@ -149,19 +149,14 @@ const Car = () => {
           <div className="CarPage_CarImage_Contact">
             <img src={car[0].image} alt="car" />
             <div className="contacts">
-              <a href="tel:75988448451" target="_blank" className="author_phone">
-                <span>{<AiFillPhone />}</span>{" "}
-                
+              <a className="author_phone">
+                <span>{<AiFillPhone />}</span> <span>(75) 9xxxx-xxxx</span>
               </a>
-              <a
-                target="_blank"
-                href="https://api.whatsapp.com/send?phone=5575988448451"
-                className="whatsapp_number"
-              >
-                <span>{<AiOutlineWhatsApp />}</span>{" "}
-                
+              <a className="whatsapp_number">
+                <span>{<AiOutlineWhatsApp />}</span>
+                <span>(75) 9xxxx-xxxx</span>
               </a>
-              <a href="mailto:andreysl2001@gmail.com" className="author_email">
+              <a className="author_email">
                 <span>{<AiOutlineMail />}</span> <span>Enviar E-mail</span>
               </a>
             </div>

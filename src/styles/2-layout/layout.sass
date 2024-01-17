@@ -118,6 +118,11 @@
             box-shadow: inset 0px 0px 3px 2px #0000008a
             cursor: pointer
 
+            svg
+                color: red
+                margin-top: auto
+                margin-left: 5px
+
             &:hover
                 color: red
 
@@ -261,7 +266,7 @@ header
                 border: 1px solid #0000002b
                 outline: none
 
-                @include mobile 
+                @include mobile
                     width: 160px
                     padding: 0
 
@@ -355,12 +360,20 @@ header
             height: 250px
             background: white
 
+            @include mobile2
+                height: auto
+                flex-direction: column
+
             &_image
 
                 a
                     display: inline-block
                     width: 420px
                     height: 250px
+
+                    @include mobile2
+                        width: auto
+                        height: auto
 
                     img
                         width: 100%
@@ -400,6 +413,9 @@ header
 .CarPage
     background-color: #EAF1F9
     padding: 12em 11em 6em
+
+    @include mobile2
+        padding: 12em 2em 6em
 
     .Share_modalwindow
         position: fixed
@@ -446,12 +462,19 @@ header
             background: white
             width: 850px
 
+            @include mobile3
+                width: 100%
+
             h2
                 font-size: 1.4em
 
             &_buttons
                 display: flex
                 gap: 2em
+
+                @include mobile4
+                    flex-wrap: wrap
+                    justify-content: center
 
                 div
                     display: flex
@@ -471,7 +494,7 @@ header
                 margin-top: 3em
                 background-color: white
                 padding: 2em
-                width: 850px
+                width: 100%
 
                 .features
                     display: grid
@@ -509,8 +532,14 @@ header
         display: flex
         gap: 2em
 
+        @include mobile3
+            flex-direction: column
+
         img
             width: 850px
+
+            @include mobile3
+                width: 100%
 
         a, div.author_phone, div.whatsapp_number, div.author_email
             border-radius: 10px
@@ -519,6 +548,9 @@ header
             display: flex
             align-items: center
             cursor: pointer
+
+            @include mobile
+                width: 200px
 
             span:first-child
                 width: 20%
@@ -541,6 +573,9 @@ header
             flex-direction: column
             justify-content: center
             gap: 2em
+
+            @include mobile
+                gap: 1em
 
             .author_phone
                 background-color: #EF5D50
@@ -569,6 +604,10 @@ header
             align-items: center
             text-align: center
             justify-content: space-between
+
+            @include mobile2
+                flex-direction: column
+                gap: 2em
 
             a
                 color: black
@@ -642,6 +681,9 @@ header
     align-items: center
     height: 60vh
     justify-content: center
+
+    @include mobile2
+        padding: 8em 2em 6em
 
     .googleBtn
         display: flex
